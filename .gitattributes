@@ -1,0 +1,2 @@
+# Keep LF line endings in the repository (services run in Linux containers)
+* text=auto eol=lf
