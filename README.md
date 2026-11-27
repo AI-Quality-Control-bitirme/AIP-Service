@@ -54,7 +54,7 @@ Then:
 pytest
 ```
 
-The default run makes no paid API calls. The integration test makes one real Gemini call (a few dozen tokens) and runs only when selected and a `GEMINI_API_KEY` is set in the environment or `.env`; otherwise it is skipped:
+The default run makes no paid API calls. The integration tests check the Gemini adapter against the real API (a successful JSON call, a rejected key and a network timeout; a few dozen tokens in total). They run only when selected; the tests that need a real key are skipped when `GEMINI_API_KEY` is not set in the environment or `.env`:
 
 ```bash
 pytest -m integration
