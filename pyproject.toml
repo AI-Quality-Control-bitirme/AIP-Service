@@ -1,3 +1,6 @@
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+markers = ["integration: makes a real, paid LLM call; run with -m integration"]
+# Paid calls never run by default (AC14). `pytest -m integration` overrides this.
+addopts = "-m 'not integration'"
